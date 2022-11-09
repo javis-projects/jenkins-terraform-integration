@@ -127,6 +127,36 @@ pipeline {
     }
 }
 
+-------------------
+
+pipeline {
+    agent any
+
+    stages {
+        stage('checkout') {
+            steps {
+               checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/javis-projects/jenkins-terraform-integration']]])
+            }
+        }
+        stage ("init"){
+            steps {
+                sh ("terraform init")
+            }
+        }
+        stage ("plan"){
+            steps {
+                sh ("terraform plan")
+            }
+        }
+        stage ("action"){
+            steps {
+                echo "Terraform action is ---> ${action}"
+                sh ("terraform ${action} --auto-approve")
+            }
+        }
+    }
+}
+
 7. Click on Build with Parameters and choose apply to build the infrastructure or choose destroy if you like to destroy the infrastructure you have built. 
 
 - Click on Build With Parameters,
@@ -134,8 +164,9 @@ pipeline {
 
    Now you should see the console output if you choose apply.
 
-
-8. Login to AWS console
+Step 7 - 
+Login to AWS console
+---------------------
 
 - Login to S3 Bucket, you should see terraform state info is also added
 
