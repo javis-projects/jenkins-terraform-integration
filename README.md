@@ -32,7 +32,6 @@ Create S3 Bucket:
 ![image](https://user-images.githubusercontent.com/104481671/200751949-75596f6f-d473-4f98-b868-852acec0b735.png)
 
 
-
 2. Block all public access, enable bucket versioning as well.
 
 3. Enable encryption.
@@ -45,6 +44,8 @@ Create DynamoDB Table
 1. Create a new table with
 1.1 Partition Key= LockID
 
+![image](https://user-images.githubusercontent.com/104481671/200752074-1354632f-7a1b-4bc0-b113-b08f2ccc0221.png)
+
 
 Step # -3 
 Create IAM role to provision EC2 instance in AWS 
@@ -56,6 +57,8 @@ The IAM role should have the following 3 policies:
 3. DynamoDB FullAccess
 
 Attach three policies
+
+![image](https://user-images.githubusercontent.com/104481671/200752136-d0b64531-4888-496a-a32a-0f213acac0ee.png)
 
 
 Step 4 - 
@@ -77,7 +80,6 @@ Create a new Jenkins Pipeline
     4. Git credentials
   
 
-
 3. Give a name to the pipeline you are creating.
 - JenkinsTerraformInfraPipeline
 
@@ -89,11 +91,16 @@ Add parameters to the pipeline
 
 2. Add parameter = Choose Choice Parameter
 
+![image](https://user-images.githubusercontent.com/104481671/200752441-47ac2368-4b5f-44d1-8cb0-61cc98fc3aba.png)
+
 3. Enter name as action
 
 4. Choices: (it should be in two lines)
    Type apply and enter and 
    Type destroy
+   
+ ![image](https://user-images.githubusercontent.com/104481671/200752557-b2171ab6-e616-4f88-a612-9ee55b7da2fa.png)
+
   
 5. Description: Give a description
 
@@ -166,6 +173,9 @@ pipeline {
 - Click on Build With Parameters,
 - choose apply from the dropdown
 
+![image](https://user-images.githubusercontent.com/104481671/200752685-1169d37a-bc6e-451a-85fb-993c89714e38.png)
+
+
    Now you should see the console output if you choose apply.
 
 Step 7 - 
@@ -174,6 +184,7 @@ Login to AWS console
 
 - Login to S3 Bucket, you should see terraform state info is also added
 
+![image](https://user-images.githubusercontent.com/104481671/200752738-fddc34af-4dc2-4c16-9278-08b86ff7f3e2.png)
 
 
 9. How to Destroy all the resources created using Terraform?
