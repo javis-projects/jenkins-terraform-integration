@@ -29,8 +29,9 @@ Create S3 Bucket:
 
 1. Login to AWS, S3. Click on create S3 bucket.
 
+![image](https://user-images.githubusercontent.com/104481671/200751949-75596f6f-d473-4f98-b868-852acec0b735.png)
 
-https://blogger.googleusercontent.com/img/a/AVvXsEisFqgTP1b0h0ZRXGM48xG7lKVfSA8d04k3c3eGLtWupgtOLk22iu97yZvPNXfP_qV4DU4QfLGt5kP1IL6CQW1BVBE1W4h0azvH5y7X0Oy48xtOGNXaAHCNl230EUpCw5zRADHuifxqbtArpzIlKcJ-fIlpiRjVwobUihZkTtY7zZcul2ejoXHv-iNm=s569
+
 
 2. Block all public access, enable bucket versioning as well.
 
