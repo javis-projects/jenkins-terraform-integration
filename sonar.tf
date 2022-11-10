@@ -38,7 +38,7 @@ resource "aws_instance" "mySonarInstance" {
         Name = "security_sonar"
       }
     }
-
+# --
 # Create Elastic IP address for Sonar instance
 resource "aws_eip" "mySonarInstance" {
   vpc      = true
